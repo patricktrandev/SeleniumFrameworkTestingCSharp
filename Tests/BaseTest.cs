@@ -20,7 +20,9 @@ namespace MemoryZoneFrameworkTest.Tests
         {
             string projectRoot = AppDomain.CurrentDomain.BaseDirectory;
             string rootPath = Path.GetFullPath(Path.Combine(projectRoot, @"..\..\..\"));
-            string path = Path.Combine(rootPath, "reports", DateTime.Now.ToString("yyyyMMddHHmmss") + ".html");
+            string reportsDir = Path.Combine(rootPath, "reports");
+            Directory.CreateDirectory(reportsDir);
+            string path = Path.Combine(reportsDir, DateTime.Now.ToString("yyyyMMddHHmmss") + ".html");
             ExtentManager.CreateReport(path);
         }
         [SetUp]
@@ -60,7 +62,9 @@ namespace MemoryZoneFrameworkTest.Tests
             string fileName = $"Screenshot_{DateTime.Now:yyyyMMdd_HHmmss}.png";
             string projectRoot = AppDomain.CurrentDomain.BaseDirectory;
             string rootPath = Path.GetFullPath(Path.Combine(projectRoot, @"..\..\..\"));
-            string fullPath = Path.Combine(rootPath,"screenshot", fileName);
+            string screenDir = Path.Combine(rootPath, "screenshot");
+            Directory.CreateDirectory(screenDir);
+            string fullPath = Path.Combine(screenDir, fileName);
           
 
             Screenshot sc = ((ITakesScreenshot)CorePage.driver).GetScreenshot();
