@@ -40,6 +40,7 @@ namespace MemoryZoneFrameworkTest.Tests.AppTests
         [Test]
         //[TestCase("ericnguyen2021@gmail.com", "ericnguyen2021@")]
         [TestCaseSource(nameof(LoginWithJsonDataSource))]
+        [Category("Smoke")]
         public void LoginWithValidUserTest_TC002(AppEntity loginModel)
         {
 

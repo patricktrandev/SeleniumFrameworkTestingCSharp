@@ -65,6 +65,7 @@ namespace MemoryZoneFrameworkTest.Tests.AppTests
         }
 
         [Test]
+        [Category("Smoke")]
         public void CompareProductWithoutCredentialTest_TC005()
         {
 
@@ -83,6 +84,7 @@ namespace MemoryZoneFrameworkTest.Tests.AppTests
 
 
         [Test]
+        [Category("Smoke")]
         public void AddProductToCart_TC006()
         {
             List<String> products = new List<string> 
