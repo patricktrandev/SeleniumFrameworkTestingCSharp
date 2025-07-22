@@ -1,0 +1,4 @@
+{
+  "BrowserType": "firefox",
+  "GridHubUrl": "http://localhost:4444/"
+}

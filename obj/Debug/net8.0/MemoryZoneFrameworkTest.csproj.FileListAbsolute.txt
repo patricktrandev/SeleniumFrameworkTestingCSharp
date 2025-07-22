@@ -143,3 +143,4 @@ D:\2025\tester\selenium\assignment\fsoft\MemoryZoneFrameworkTest\MemoryZoneFrame
 D:\2025\tester\selenium\assignment\fsoft\MemoryZoneFrameworkTest\MemoryZoneFrameworkTest\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\2025\tester\selenium\assignment\fsoft\MemoryZoneFrameworkTest\MemoryZoneFrameworkTest\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\2025\tester\selenium\assignment\fsoft\MemoryZoneFrameworkTest\MemoryZoneFrameworkTest\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\2025\tester\selenium\assignment\fsoft\MemoryZoneFrameworkTest\MemoryZoneFrameworkTest\obj\Debug\net8.0\MemoryZoneFrameworkTest.sourcelink.json

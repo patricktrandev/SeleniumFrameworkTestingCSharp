@@ -7,6 +7,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
@@ -29,26 +30,47 @@ namespace MemoryZoneFrameworkTest.WebApp.Base
 
         public static IWebDriver initDriver(BrowserType.Browser browser)
         {
+            DriverOptions options;
 
             switch (browser)
             {
                 case BrowserType.Browser.Chrome:
-                    driver = new ChromeDriver();
+                    options = new ChromeOptions();
                     break;
                 case BrowserType.Browser.Firefox:
-                    driver = new FirefoxDriver();
+                    options = new FirefoxOptions();
                     break;
                 case BrowserType.Browser.IE:
-                    driver = new EdgeDriver();
+                    options = new EdgeOptions(); // or InternetExplorerOptions if using IE
                     break;
                 default:
-
                     throw new ArgumentException("Invalid Browser");
             }
 
+            //switch (browser)
+            //{
+            //    case BrowserType.Browser.Chrome:
+            //        driver = new ChromeDriver();
+            //        break;
+            //    case BrowserType.Browser.Firefox:
+            //        driver = new FirefoxDriver();
+            //        break;
+            //    case BrowserType.Browser.IE:
+            //        driver = new EdgeDriver();
+            //        break;
+            //    default:
 
+            //        throw new ArgumentException("Invalid Browser");
+            //}
+
+
+            //driver.Manage().Window.Maximize();
+
+
+            driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), options);
             driver.Manage().Window.Maximize();
-            
+
+
             return driver;
         }
 
