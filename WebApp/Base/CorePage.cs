@@ -22,7 +22,8 @@ namespace MemoryZoneFrameworkTest.WebApp.Base
 {
     public class CorePage
     {
-        public static IWebDriver driver;
+        private static ThreadLocal<RemoteWebDriver> _driver = new ThreadLocal<RemoteWebDriver>();
+        public static RemoteWebDriver driver => _driver.Value;
         public static WebDriverWait wait;
         public static Actions action;
 
@@ -36,12 +37,13 @@ namespace MemoryZoneFrameworkTest.WebApp.Base
             {
                 case BrowserType.Browser.Chrome:
                     options = new ChromeOptions();
+                   
                     break;
                 case BrowserType.Browser.Firefox:
                     options = new FirefoxOptions();
                     break;
                 case BrowserType.Browser.IE:
-                    options = new EdgeOptions(); // or InternetExplorerOptions if using IE
+                    options = new EdgeOptions(); 
                     break;
                 default:
                     throw new ArgumentException("Invalid Browser");
@@ -66,12 +68,13 @@ namespace MemoryZoneFrameworkTest.WebApp.Base
 
             //driver.Manage().Window.Maximize();
 
+            _driver.Value = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), options);
+            _driver.Value.Manage().Window.Maximize();
+            //driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), options);
+            //driver.Manage().Window.Maximize();
 
-            driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), options);
-            driver.Manage().Window.Maximize();
 
-
-            return driver;
+            return _driver.Value;
         }
 
 
@@ -80,7 +83,7 @@ namespace MemoryZoneFrameworkTest.WebApp.Base
             if (driver != null)
             {
                 driver.Quit();
-                driver = null;
+               
             }
         }
 

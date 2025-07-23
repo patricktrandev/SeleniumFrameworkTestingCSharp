@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 namespace MemoryZoneFrameworkTest.Tests.AppTests
 {
     [TestFixture]
-    [Parallelizable(ParallelScope.Self)]
     public class AuthTest:BaseTest
     {
         RegisterPage registerPage = new RegisterPage();

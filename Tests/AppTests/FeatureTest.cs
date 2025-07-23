@@ -7,7 +7,6 @@ using MemoryZoneFrameworkTest.WebApp.Page;
 namespace MemoryZoneFrameworkTest.Tests.AppTests
 {
     [TestFixture]
-    [Parallelizable(ParallelScope.Self)]
     public class FeatureTest:BaseTest
     {
         

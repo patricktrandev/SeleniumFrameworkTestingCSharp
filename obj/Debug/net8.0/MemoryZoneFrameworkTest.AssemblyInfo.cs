@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MemoryZoneFrameworkTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ddbe30468749a03198fc1b03affa0c531d789b7a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7623e0b7bac9962ad9508f5856fe04853f00eab7")]
 [assembly: System.Reflection.AssemblyProductAttribute("MemoryZoneFrameworkTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MemoryZoneFrameworkTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
